@@ -54,15 +54,12 @@ body {
 }
 
 /* Hide toggle */
-
 @media (min-width: 768px) {
-
   .sidebar,
   .toggle-btn {
     display: none;
   }
 }
-
 
 /* Responsive styles for smaller screens */
 @media (max-width: 768px) {
@@ -76,8 +73,7 @@ body {
   }
 
   .nav {
-    display: none;
-    /* Hide the navigation links */
+    display: none; /* Hide the navigation links */
   }
 
   /* Sidebar styles */
@@ -105,4 +101,21 @@ body {
     font-size: 1.5rem;
     z-index: 3;
   }
+}
+
+/* Responsive styles for phone screens */
+@media (max-width: 480px) {
+  .header {
+    padding: 0.5rem;
+  }
+
+  .name {
+    font-size: 1.2rem;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+  }
+
+  /* Adjust other styles as needed for smaller screens */
 }
