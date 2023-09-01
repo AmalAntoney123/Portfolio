@@ -6,13 +6,13 @@ particlesJS("particles-js", {
       "value": 100,
       "density": {
         "enable": true,
-        "value_area":1000
+        "value_area": 1000
       }
     },
     "color": {
       "value": ["#aa73ff", "#f8c210", "#83d238", "#33b1f8"]
     },
-    
+
     "shape": {
       "type": "circle",
       "stroke": {
@@ -102,3 +102,56 @@ function toggleSidebar() {
   var sidebar = document.querySelector('.sidebar');
   sidebar.classList.toggle('active');
 }
+
+// hero sub
+
+const titles = ["Frontend Developer", "UI/UX Designer", "Backend Developer", "Graphic Designer"];
+let titleIndex = 0;
+let charIndex = 0;
+let isTyping = true;
+
+function typeTitle() {
+  const header = document.getElementById("typing-header");
+  const title = titles[titleIndex];
+
+  if (isTyping) {
+    header.innerHTML = title.substring(0, charIndex);
+    charIndex++;
+    if (charIndex > title.length) {
+      isTyping = false;
+      setTimeout(eraseTitle, 1000);
+    } else {
+      setTimeout(typeTitle, 100);
+    }
+  }
+}
+
+function eraseTitle() {
+  const header = document.getElementById("typing-header");
+  const title = titles[titleIndex];
+
+  if (!isTyping) {
+    header.innerHTML = title.substring(0, charIndex);
+    charIndex--;
+    if (charIndex === 0) {
+      isTyping = true;
+      titleIndex = (titleIndex + 1) % titles.length;
+      setTimeout(typeTitle, 500);
+    } else {
+      setTimeout(eraseTitle, 100);
+    }
+  }
+}
+
+typeTitle();
+
+// Image load
+document.addEventListener("DOMContentLoaded", function () {
+  const img = document.querySelector(".img-responsive");
+  img.classList.add("animate");
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const text = document.querySelector(".animate-text-from-left");
+  text.classList.add("animate");
+});

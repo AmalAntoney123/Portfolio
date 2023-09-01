@@ -7,11 +7,18 @@ body {
   font-family: "Montserrat", serif;
   font-size: 16px;
   line-height: 1.5;
+  /* overflow: hidden; */
 }
 
-#particles-js {
-  width: 100%;
+.particle-canvas {
+  position: absolute;
   background: #111111;
+  width: 100%;
+  height: 900px;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  /* Set a negative z-index to place it behind other elements */
 }
 
 /* Header styles for larger screens */
@@ -22,13 +29,7 @@ body {
   z-index: 1;
 }
 
-.name {
-  color: #fff;
-  font-size: 1.4rem;
-  font-weight: bold;
-  padding-left: 3rem;
-  float: left;
-}
+
 
 .name,
 .nav {
@@ -42,34 +43,98 @@ body {
   float: right;
 }
 
-.nav-link {
+.nav-links {
   color: #fff;
   text-decoration: none;
-  padding: 0.5rem 1rem;
-  border-radius: 0.2rem;
+  margin-left: 20px;
+  margin-top: 20px;
 }
 
 .nav-link:hover {
-  color: #135597;
+  color: #217bd4;
 }
 
 /* Hide toggle */
-@media (min-width: 768px) {
+@media (min-width: 1136px) {
 
   .sidebar,
   .toggle-btn {
     display: none;
   }
+
+  .name {
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: bold;
+    float: left;
+    margin-left: 4rem;
+  }
+
+  /* Hero section */
+  .hero {
+    margin-left: 6rem;
+    color: #fff;
+    text-align: left;
+    padding: 100px 0;
+    display: flex;
+    /* Use flexbox for the layout */
+    justify-content: space-between;
+    /* Space between the two columns */
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .header-container {
+    position: relative;
+    display: inline-block;
+    color: #217bd4;
+  }
+
+  .cursor {
+    position: absolute;
+    top: 1px;
+    right: -5px;
+    width: 3px;
+    height: 35px;
+    background-color: #217bd4;
+    animation: blink 0.8s infinite;
+  }
+
+  @keyframes blink {
+
+    0%,
+    100% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0;
+    }
+  }
+
 }
 
+
+
+
+/* ############################################################ */
+
+
+
+
 /* Responsive styles for smaller screens */
-@media (max-width: 768px) {
+@media (max-width: 1136px) {
   .header {
     padding: 1rem;
   }
 
   .name {
-    padding-left: 1rem;
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: bold;
+    padding-left: -20vh;
     float: none;
   }
 
@@ -82,16 +147,22 @@ body {
   .sidebar {
     position: fixed;
     top: 0;
-    left: -900px; /* Change left position to 0 */
-    width: 100%; /* Change width to 100% */
+    left: -900px;
+    /* Change left position to 0 */
+    width: 100%;
+    /* Change width to 100% */
     height: 100%;
-    background: #11111175;
+    background: #111111c4;
     z-index: 2;
     transition: left 0.3s ease-in-out;
-    display: flex; /* Use flexbox for centering */
-    flex-direction: column; /* Stack items vertically */
-    justify-content: center; /* Vertically center content */
-    align-items: center; /* Horizontally center content */
+    display: flex;
+    /* Use flexbox for centering */
+    flex-direction: column;
+    /* Stack items vertically */
+    justify-content: center;
+    /* Vertically center content */
+    align-items: center;
+    /* Horizontally center content */
   }
 
   .sidebar.active {
@@ -107,6 +178,55 @@ body {
     font-size: 1.5rem;
     z-index: 3;
   }
+
+  .image-container {
+    margin-top: 40px;
+  }
+
+  /* Hero section */
+  .hero {
+    margin-left: 2rem;
+    color: #fff;
+    text-align: left;
+    padding: 100px 0;
+    display: flex;
+    /* Use flexbox for the layout */
+    justify-content: space-between;
+    /* Space between the two columns */
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .header-container {
+    position: relative;
+    display: inline-block;
+    color: #217bd4;
+  }
+
+  .cursor {
+    position: absolute;
+    top: 1px;
+    right: -5px;
+    width: 3px;
+    height: 35px;
+    background-color: #217bd4;
+    animation: blink 0.8s infinite;
+  }
+
+  @keyframes blink {
+
+    0%,
+    100% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0;
+    }
+  }
+
 }
 
 /* Responsive styles for phone screens */
@@ -119,9 +239,56 @@ body {
     font-size: 1.2rem;
   }
 
-  .nav-link {
+  .nav-links {
     font-size: 1rem;
   }
 
   /* Adjust other styles as needed for smaller screens */
+}
+
+
+/* Initial styling for the image */
+
+.image-container {
+  margin-left: 10%;
+}
+
+.img-responsive {
+  opacity: 0;
+  /* Initially, make the text invisible */
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  /* Added animation for opacity and transform */
+  transform: translateX(+100%);
+  /* Initially, move the text off-screen to the left */
+}
+
+/* Hover effect - darkens the image on hover */
+.image-container:hover .img-responsive {
+  filter: brightness(70%);
+}
+
+/* Animation to move the image into view on page load */
+.img-responsive.animate {
+  opacity: 1;
+  /* Make the text visible */
+  transform: translateX(0);
+  /* Move the text to its original position */
+}
+
+/* Initial styling for the text */
+.animate-text-from-left {
+  opacity: 0;
+  /* Initially, make the text invisible */
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  /* Added animation for opacity and transform */
+  transform: translateX(-100%);
+  /* Initially, move the text off-screen to the left */
+}
+
+/* Animation to move the text into view on page load */
+.animate-text-from-left.animate {
+  opacity: 1;
+  /* Make the text visible */
+  transform: translateX(0);
+  /* Move the text to its original position */
 }
