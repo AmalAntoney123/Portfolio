@@ -96,3 +96,9 @@ particlesJS("particles-js", {
   },
   "retina_detect": true
 });
+
+// Toglle sidebar
+function toggleSidebar() {
+  var sidebar = document.querySelector('.sidebar');
+  sidebar.classList.toggle('active');
+}

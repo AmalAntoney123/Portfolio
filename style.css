@@ -1,5 +1,7 @@
 /* Common styles for all screen sizes */
-html, body {
+html,
+body {
+  height: 100%;
   margin: 0;
   padding: 0;
   font-family: "Montserrat", serif;
@@ -12,7 +14,7 @@ html, body {
   background: #111111;
 }
 
-/* Header styles for all screen sizes */
+/* Header styles for larger screens */
 .header {
   padding: 2rem 2rem;
   position: sticky;
@@ -28,7 +30,8 @@ html, body {
   float: left;
 }
 
-.name, .nav {
+.name,
+.nav {
   display: block;
 }
 
@@ -50,24 +53,56 @@ html, body {
   color: #135597;
 }
 
+/* Hide toggle */
+
+@media (min-width: 768px) {
+
+  .sidebar,
+  .toggle-btn {
+    display: none;
+  }
+}
+
+
 /* Responsive styles for smaller screens */
 @media (max-width: 768px) {
   .header {
-      padding: 1rem;
+    padding: 1rem;
   }
 
   .name {
-      padding-left: 1rem;
+    padding-left: 1rem;
+    float: none;
   }
 
   .nav {
-      float: none;
-      text-align: center;
-      margin-top: 1rem;
+    display: none;
+    /* Hide the navigation links */
   }
 
-  .nav-link {
-      display: block;
-      padding: 0.5rem 0;
+  /* Sidebar styles */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -200px;
+    width: 200px;
+    height: 100%;
+    background: #111111;
+    z-index: 2;
+    transition: left 0.3s ease-in-out;
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+
+  .toggle-btn {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.5rem;
+    z-index: 3;
   }
 }
