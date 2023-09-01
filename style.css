@@ -7,6 +7,7 @@ body {
   font-family: "Montserrat", serif;
   font-size: 16px;
   line-height: 1.5;
+  overflow-x: hidden;
   /* overflow: hidden; */
 }
 
@@ -14,7 +15,7 @@ body {
   position: absolute;
   background: #111111;
   width: 100%;
-  height: 900px;
+  height: 100%;
   top: 0;
   left: 0;
   z-index: -1;
@@ -24,12 +25,9 @@ body {
 /* Header styles for larger screens */
 .header {
   padding: 2rem 2rem;
-  position: sticky;
   top: 0;
   z-index: 1;
 }
-
-
 
 .name,
 .nav {
@@ -54,6 +52,10 @@ body {
   color: #217bd4;
 }
 
+
+/* ############################################################ */
+
+
 /* Hide toggle */
 @media (min-width: 1136px) {
 
@@ -73,6 +75,7 @@ body {
   /* Hero section */
   .hero {
     margin-left: 6rem;
+    margin-right: 6rem;
     color: #fff;
     text-align: left;
     padding: 100px 0;
@@ -188,7 +191,8 @@ body {
 
   /* Hero section */
   .hero {
-    margin-left: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
     color: #fff;
     text-align: left;
     padding: 100px 0;
@@ -236,6 +240,11 @@ body {
 
 }
 
+
+
+/* ############################################################ */
+
+
 /* Responsive styles for phone screens */
 @media (max-width: 480px) {
   .header {
@@ -244,6 +253,7 @@ body {
 
   .name {
     font-size: 1.2rem;
+    padding-left: 1rem;
   }
 
   .nav-links {
@@ -257,7 +267,8 @@ body {
 
   /* Hero section */
   .hero {
-    margin-left: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
     color: #fff;
     text-align: left;
     padding: 100px 0;
@@ -299,14 +310,11 @@ body {
     }
   }
 
-  /* Adjust other styles as needed for smaller screens */
+
 }
 
 
 /* Initial styling for the image */
-
-
-
 .img-responsive {
   opacity: 0;
   /* Initially, make the text invisible */
