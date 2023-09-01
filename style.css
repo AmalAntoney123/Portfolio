@@ -113,6 +113,9 @@ body {
       opacity: 0;
     }
   }
+  .image-container {
+    margin-left: 10%;
+  }
 
 }
 
@@ -227,6 +230,10 @@ body {
     }
   }
 
+  .image-container {
+    margin-left: 10%;
+  }
+
 }
 
 /* Responsive styles for phone screens */
@@ -242,6 +249,55 @@ body {
   .nav-links {
     font-size: 1rem;
   }
+  
+  .image-container {
+    margin-top: 40px;
+    margin-left: 0;
+  }
+
+  /* Hero section */
+  .hero {
+    margin-left: 2rem;
+    color: #fff;
+    text-align: left;
+    padding: 100px 0;
+    display: flex;
+    /* Use flexbox for the layout */
+    justify-content: space-between;
+    /* Space between the two columns */
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .header-container {
+    position: relative;
+    display: inline-block;
+    color: #217bd4;
+  }
+
+  .cursor {
+    position: absolute;
+    top: 1px;
+    right: -5px;
+    width: 3px;
+    height: 35px;
+    background-color: #217bd4;
+    animation: blink 0.8s infinite;
+  }
+
+  @keyframes blink {
+
+    0%,
+    100% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0;
+    }
+  }
 
   /* Adjust other styles as needed for smaller screens */
 }
@@ -249,9 +305,7 @@ body {
 
 /* Initial styling for the image */
 
-.image-container {
-  margin-left: 10%;
-}
+
 
 .img-responsive {
   opacity: 0;
