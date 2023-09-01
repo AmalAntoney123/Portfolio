@@ -55,6 +55,7 @@ body {
 
 /* Hide toggle */
 @media (min-width: 768px) {
+
   .sidebar,
   .toggle-btn {
     display: none;
@@ -73,19 +74,24 @@ body {
   }
 
   .nav {
-    display: none; /* Hide the navigation links */
+    display: none;
+    /* Hide the navigation links */
   }
 
   /* Sidebar styles */
   .sidebar {
     position: fixed;
     top: 0;
-    left: -200px;
-    width: 200px;
+    left: -900px; /* Change left position to 0 */
+    width: 100%; /* Change width to 100% */
     height: 100%;
-    background: #111111;
+    background: #11111175;
     z-index: 2;
     transition: left 0.3s ease-in-out;
+    display: flex; /* Use flexbox for centering */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Vertically center content */
+    align-items: center; /* Horizontally center content */
   }
 
   .sidebar.active {
