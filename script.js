@@ -155,3 +155,62 @@ document.addEventListener("DOMContentLoaded", function () {
   const text = document.querySelector(".animate-text-from-left");
   text.classList.add("animate");
 });
+
+
+// Slidein Slideout sections
+
+// Get all header links and content sections
+const headerLinks = document.querySelectorAll(".nav-links");
+const contentSections = document.querySelectorAll(".content-section");
+
+// Function to hide all content sections
+function hideAllSections() {
+  contentSections.forEach((section) => {
+    section.classList.remove("active");
+    section.style.display = "none";
+
+  });
+}
+
+function delay(time) {
+  var d1 = new Date();
+  var d2 = new Date();
+  while (d2.valueOf() < d1.valueOf() + time) {
+    d2 = new Date();
+  }
+}
+
+// Function to show a specific content section by its ID
+function showSection(sectionId) {
+  const section = document.getElementById(sectionId);
+  if (section) {
+    section.style.display = "block";
+    setTimeout(function() {
+      section.classList.add("active");
+    }, 1.5);
+  }
+}
+
+// Add click event listeners to header links
+headerLinks.forEach((link) => {
+  link.addEventListener("click", (e) => {
+    // Prevent default link behavior
+    e.preventDefault();
+
+    // Hide all content sections
+    hideAllSections();
+
+    // Get the target section ID from the link's href attribute
+    const targetSectionId = link.getAttribute("href"); // Remove the '#' symbol
+    console.log(targetSectionId);
+
+    // Show the target section with a slight delay for better animation effect
+    setTimeout(() => {
+      showSection(targetSectionId);
+    }, 100);
+  });
+});
+
+// Hide all sections except the first one initially (e.g., "Home")
+hideAllSections();
+showSection("home"); // Assuming you have a "home" section
