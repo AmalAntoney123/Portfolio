@@ -187,7 +187,7 @@ function showSection(sectionId) {
     section.style.display = "block";
     setTimeout(function() {
       section.classList.add("active");
-    }, 1.5);
+    }, 3);
   }
 }
 
