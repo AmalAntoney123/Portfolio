@@ -1,6 +1,7 @@
 /* Common styles for all screen sizes */
 :root {
   --background-dark: #2d354800;
+  --background-darker: #484b5388;
   --text-light: #217bd4;
   --text-lighter: #ffffffe6;
   --spacing-s: 8px;
@@ -248,6 +249,8 @@ footer {
     border-bottom: .2rem solid #00000000;
     border-left: .2rem solid #217bd4;
     border-right: .2rem solid #217bd4;
+  }.contact-details{
+    padding-right: 5rem!important;
   }
 
 }
@@ -842,3 +845,114 @@ footer {
     width: 100%;
   }
 }
+
+/* Contact me */
+
+
+.contact h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+.contact {
+  color: #fff;
+  text-align: left;
+  padding: 100px 0;
+  display: flex;
+  /* Use flexbox for the layout */
+  justify-content: space-between;
+  /* Space between the two columns */
+  padding: 0 4rem 0 4rem;
+}
+
+.contact > .text{
+  width: 70%;
+  margin: 1.5rem auto;
+  text-align: center;
+}
+.contact .row{
+  margin: 1rem 0;
+}
+.contact .row > div{
+  margin: 2.5rem 0;
+  padding: 2rem 0;
+}
+.contact .col-left h2{
+  text-transform: uppercase;
+}
+.contact .contact-info{
+  margin: 1rem 0;
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: center;
+}
+.contact .contact-info > span{
+  color: var(--green);
+  font-size: 2.6rem;
+  margin-right: 1.2rem;
+}
+.contact .contact-info h3{
+  font-size: 1rem;
+  font-weight: 400;
+}
+.contact .contact-info h3 span{
+  text-transform: uppercase;
+  font-size: 1.05rem;
+}
+.contact .contact-social-links{
+  display: flex;
+}
+.contact .contact-social-links i{
+  color: #fff;
+}
+.contact .contact-social-links a{
+  display: block;
+  width: 50px;
+  height: 50px;
+  background: var(--background-darker);
+  margin: 0 0.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: var(--transition);
+  text-decoration: none;
+}
+.contact .contact-social-links a:first-child{
+  margin-left: 0;
+}
+.contact .contact-social-links a:hover{
+  background: var(--text-light);
+}
+.contact-form input, .contact-form textarea{
+  width: 100%;
+  margin: 1rem 0;
+  background: var(--background-darker);
+  border: 2px solid transparent;
+  font-size: 1rem;
+  padding: 0.8rem 1rem;
+  border-radius: 25px;
+  outline: 0;
+  caret-color: #fff;
+}
+.contact-form input:focus, .contact-form textarea:focus{
+  border-color: var(--text-light);
+}
+.contact-form input::placeholder,
+.contact-form textarea::placeholder{
+  text-transform: uppercase;
+}
+.form-group.contact-form {
+  display: flex; /* Use flexbox to place inputs on one line */
+  justify-content: space-between; /* Spread inputs evenly */
+}
+
+.form-group.contact-form input {
+  flex: 1; /* Allow inputs to grow and fill available space */
+  margin-right: 10px; /* Add some spacing between inputs */
+}
+.contact i{
+  color: #217bd4;
+  text-decoration: none;
+}
+
