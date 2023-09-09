@@ -771,88 +771,74 @@ footer {
 .skills h1 {
   font-size: 2.5rem;
   text-align: center;
+  margin-bottom: 4rem;
+  margin-top: 1rem;
+}
+.skills p {
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
-.skills > .text{
-  margin: 1.5rem auto;
-  text-align: center;
+.skill{
+  margin-bottom: 2rem;
 }
-.skills .row{
-  margin: 1rem 0;
-}
-.skills .item{
-  padding: 0.5rem 0;
-  margin: 0.3rem 0;
-}
-.skills .item-text{
-  display: flex;
-  justify-content: flex-start;
-  font-weight: 600;
-  font-size: 1.3rem;
-  position: relative;
-}
-.skills .item-text span:last-child{
-  position: absolute;
-}
-.skills .item-text .w-95{
-  margin-left: 90%;
-}
-.skills .item-text .w-90{
-  margin-left: 85%;
-}
-.skills .item-text .w-75{
-  margin-left: 70%;
-}
-.skills .item-text .w-70{
-  margin-left: 65%;
-}
-.skills .item-text .w-85{
-  margin-left: 80%;
-}
-.skills .item-text .w-80{
-  margin-left: 75%;
-}
-.skills .item-text .w-60{
-  margin-left: 55%;
-}
-.skills .item-text .w-68{
-  margin-left: 63%;
-}
-.progress{
-  margin: 0.8rem 0;
-  border-radius: 10px;
-  height: 16px;
+
+.skills-card{
   width: 100%;
-  background-color: var(--text-lighter);
-  overflow: hidden;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
-.progress-bar{
-  background: var(--text-light);
-  height: 100%;
-  border-top-right-radius: 2px;
-  border-bottom-right-radius: 2px;
+
+.skill-name{
+  font-size: 18px;
+  font-weight: 700;
+  color: #f1f1f1;
+  text-transform: uppercase;
+  margin: 20px 0;
 }
-.progress-bar.w-95{
-  width: 95%;
+
+.skill-bar{
+  height: 14px;
+  background: #282828;
+  border-radius: 3px;
 }
-.progress-bar.w-90{
-  width: 90%;
+
+.skill-per{
+  height: 14px;
+  background: #217bd4;
+  border-radius: 3px;
+  position: relative;
+  animation: fillBars 2.5s 1;
 }
-.progress-bar.w-75{
-  width: 75%;
+
+.skill-per::before{
+  content: attr(per);
+  position: absolute;
+  padding: 4px 6px;
+  background: #217bd4;
+  border-radius: 4px;
+  font-size: 12px;
+  top: -35px;
+  right: 0;
+  transform: translateX(50%);
 }
-.progress-bar.w-70{
-  width: 70%;
+
+.skill-per::after{
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #f1f1f1;
+  top: -20px;
+  right: 0;
+  transform: translateX(50%) rotate(45deg);
+  border-radius: 2px;
 }
-.progress-bar.w-85{
-  width: 85%;
-}
-.progress-bar.w-80{
-  width: 80%;
-}
-.progress-bar.w-60{
-  width: 60%;
-}
-.progress-bar.w-68{
-  width: 68%;
+
+@keyframes fillBars{
+  from{
+    width: 0;
+  }
+  to{
+    width: 100%;
+  }
 }
