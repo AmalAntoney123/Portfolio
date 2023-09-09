@@ -187,7 +187,7 @@ function showSection(sectionId) {
     section.style.display = "block";
     setTimeout(function() {
       section.classList.add("active");
-    }, 3);
+    }, 60);
   }
 }
 
@@ -214,3 +214,5 @@ headerLinks.forEach((link) => {
 // Hide all sections except the first one initially (e.g., "Home")
 hideAllSections();
 showSection("home"); // Assuming you have a "home" section
+
+
