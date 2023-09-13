@@ -27,7 +27,7 @@ body {
 /* Define the scrollbar track */
 ::-webkit-scrollbar {
   width: 10px; /* Adjust the width as needed */
-  background-color: black; /* Make it transparent */
+  background-color: #111111; /* Make it transparent */
   border-radius: 10px; /* Add rounded edges */
 }
 
@@ -44,7 +44,7 @@ body {
 
 /* Define the scrollbar track when it is not active (e.g., on Mac) */
 ::-webkit-scrollbar-track {
-  background-color: black; /* Make it transparent */
+  background-color: #111111; /* Make it transparent */
 }
 
 /* Define the scrollbar corner */
