@@ -23,6 +23,37 @@ body {
   /* overflow: hidden; */
 }
 
+/* Scroll */
+/* Define the scrollbar track */
+::-webkit-scrollbar {
+  width: 10px; /* Adjust the width as needed */
+  background-color: black; /* Make it transparent */
+  border-radius: 10px; /* Add rounded edges */
+}
+
+/* Define the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background-color: #217ad497; /* Set the color */
+  border-radius: 10px; /* Add rounded edges */
+}
+
+/* Define the scrollbar thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #185b9d; /* Change color on hover if desired */
+}
+
+/* Define the scrollbar track when it is not active (e.g., on Mac) */
+::-webkit-scrollbar-track {
+  background-color: black; /* Make it transparent */
+}
+
+/* Define the scrollbar corner */
+::-webkit-scrollbar-corner {
+  background-color: transparent; /* Make it transparent */
+}
+
+
+
 .particle-canvas {
   position: fixed;
   background: #111111;
